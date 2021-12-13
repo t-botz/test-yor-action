@@ -6,17 +6,6 @@ on:
       - main
 
 jobs:
-  yor-job-old:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Run yor action
-        uses: bridgecrewio/yor-action@main
-        with:
-          commit_changes: NO
   yor-job-new:
     runs-on: ubuntu-latest
     steps:
@@ -26,5 +15,16 @@ jobs:
           fetch-depth: 0
       - name: Run yor action
         uses: t-botz/yor-action@main
+        with:
+          commit_changes: NO
+  yor-job-old:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run yor action
+        uses: bridgecrewio/yor-action@main
         with:
           commit_changes: NO
